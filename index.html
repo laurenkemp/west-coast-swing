@@ -78,21 +78,21 @@
       }
 
       .grid img {
-            transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
       }
 
       .grid img:hover {
         transform: scale(2);
       }
 
-      .dark-mode {
+      .dark-mode-button {
         margin-top: 20px;
         background-color: var(--brand-green);
         color: white;
         font-size: 10px;
       }
 
-      .dark-mode:hover {
+      .dark-mode-button:hover {
         background-color: white;
         color: var(--brand-green);
         cursor: pointer;
@@ -108,6 +108,38 @@
         background-color: white;
         color: var(--brand-green);
         cursor: pointer;
+      }
+
+      .dark {
+        background-color: #121212;
+      }
+
+      .dark h2 {
+        color: #8b8b8b;
+      }
+
+      .dark footer {
+        color: #fcd4e2;
+      }
+
+      .dark .container {
+        background-color: #282828;
+        color: #fcd4e2;
+      }
+
+      .dark button {
+        background-color: #fcd4e2;
+        color: #121212;
+        box-shadow: 5px 4px 0px #121212;
+      }
+
+      .dark .dark-mode-button {
+        box-shadow: 5px 4px 0px #282828;
+      }
+
+      .dark button:hover {
+        background-color: #121212;
+        color: #fcd4e2;
       }
 
       footer {
@@ -136,8 +168,8 @@
       }
     </style>
   </head>
-  <body>
-    <button class="dark-mode">Dark Mode</button>
+  <body class="">
+    <button class="dark-mode-button">Change Color Theme</button>
     <div class="container">
       <h1>West Coast Swing</h1>
       <h2>groovy, baby</h2>
@@ -150,33 +182,30 @@
       </a>
       <div class="grid">
         <img
-            src="https://alpha.uscreencdn.com/images/programs/60474/horizontal/data_2Fimages_2FAcTk03IRumZRLi3uuWeI_JTprogram.jpg"
-            alt=""
-          />
-       
-         <img
-            src="https://images.squarespace-cdn.com/content/v1/52d1eb65e4b0178cd181929b/1539114442741-I52RT4819KNYM41YP2ML/1538496695105-West+Coast+Swing+Dance.jpg"
-            alt=""
-          />
+          src="https://alpha.uscreencdn.com/images/programs/60474/horizontal/data_2Fimages_2FAcTk03IRumZRLi3uuWeI_JTprogram.jpg"
+          alt=""
+        />
+
         <img
-            src="https://d2ci82p1s8eczl.cloudfront.net/wp-content/uploads/20230821165517/DanceIMAGE-min-1024x662.jpg"
-            alt=""
-          />  
-  
+          src="https://images.squarespace-cdn.com/content/v1/52d1eb65e4b0178cd181929b/1539114442741-I52RT4819KNYM41YP2ML/1538496695105-West+Coast+Swing+Dance.jpg"
+          alt=""
+        />
+        <img
+          src="https://d2ci82p1s8eczl.cloudfront.net/wp-content/uploads/20230821165517/DanceIMAGE-min-1024x662.jpg"
+          alt=""
+        />
       </div>
 
-        <p>
-          West Coast Swing is a partner dance with roots in Lindy Hop. It is
-          characterized by an elastic look that results from its
-          extension-compression technique of partner connection and is danced
-          primarily in a slotted area on the dance floor. The dance allows for
-          both partners to improvise steps while dancing together, putting West
-          Coast Swing in a short list of dances that emphasize improvisation.
-        </p>
+      <p>
+        West Coast Swing is a partner dance with roots in Lindy Hop. It is
+        characterized by an elastic look that results from its
+        extension-compression technique of partner connection and is danced
+        primarily in a slotted area on the dance floor. The dance allows for
+        both partners to improvise steps while dancing together, putting West
+        Coast Swing in a short list of dances that emphasize improvisation.
+      </p>
 
-        <button class="learn-button">Learn West Coast Swing</button>
-
-      </div>
+      <button class="learn-button">Learn West Coast Swing</button>
     </div>
     <footer>
       This project was coded by
@@ -189,5 +218,19 @@
       >, and hosted on
       <a href="https://www.netlify.com/" target="_blank"> Netlify</a>
     </footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      let darkModeButton = document.querySelector(".dark-mode-button");
+      darkModeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
